@@ -1,0 +1,39 @@
+{
+  "canisters": {
+    "uhalifu_backend": {
+      "build": "npx azle uhalifu_backend",
+      "candid": "src/uhalifu_backend/uhalifu_backend.did",
+      "gzip": true,
+      "main": "src/uhalifu_backend/src/index.ts",
+      "tech_stack": {
+        "cdk": {
+          "azle": {}
+        },
+        "language": {
+          "javascript": {},
+          "typescript": {}
+        }
+      },
+      "type": "custom",
+      "wasm": ".azle/uhalifu_backend/uhalifu_backend.wasm"
+    },
+    "uhalifu_frontend": {
+      "dependencies": [
+        "uhalifu_backend"
+      ],
+      "source": [
+        "src/uhalifu_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "uhalifu_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
